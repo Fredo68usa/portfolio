@@ -1,7 +1,7 @@
 # Frederic Petit's Data Analysis Portfolio
 Google Data Analysis Professional Certificate
 
-
+Ask, Prepare, Process, Analyze, and Share are the 5 phases of the data analysis process
 
 [Bio on LinkedIn](https://www.linkedin.com/in/fredericpetitusa/)
 

@@ -9,7 +9,7 @@ Google Data Analysis Professional Certificate
 
 # Capstone project #1 : Divvy Bike
 
-## Description of the Capstone project #1 
+## Description 
 The Capstone project is the hands-on project to be completed at the end of the Google course for Data Analysis Professional Certificate.
 
 You can bring this project as far as you want to.

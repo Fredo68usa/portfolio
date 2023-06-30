@@ -1,2 +1,2 @@
-# Frederic Petit's Data Analysis portfolio
+# Frederic Petit's Data Analysis Portfolio
 My Portfolio

@@ -2,10 +2,10 @@
 Google Data Analysis Professional Certificate
 
 
-[LinkedIn](https://github.com/Fredo68usa/portfolio/blob/main/LI-Logo.png)
-[ Bio](https://www.linkedin.com/in/fredericpetitusa/)
 
-![Test](https://github.com/Fredo68usa/portfolio/blob/main/index.md)
+[Bio on LinkedIn](https://www.linkedin.com/in/fredericpetitusa/)
+
+[Test](https://github.com/Fredo68usa/portfolio/blob/main/index.md)
 
 # Capstone project #1 : Divvy Bike
 

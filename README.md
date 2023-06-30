@@ -1,6 +1,8 @@
 # Frederic Petit's Data Analysis Portfolio
 Google Data Analysis Professional Certificate
 
+[Bio](https://www.linkedin.com/in/fredericpetitusa/)
+
 # Capstone project #1 : Divvy Bike
 
 ## Description of the Capstone project #1 

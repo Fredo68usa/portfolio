@@ -22,7 +22,7 @@ We will present at a later stage such implementations. Our goal is to ultimately
 Divvy is a bike sharing system managed by the City of Chicago.
 
 ## Data Set 
-Provided by Divvy Bike
+Provided by Divvy Bike :  [Dataset](https://divvy-tripdata.s3.amazonaws.com/index.html)
 
 ## Approach
 Despite the project providing an high level requirement document, we prefer the approach to get the data without direction and get all insights we can. We avoid setting a direction and limiting the meaning the data have. At the very end of the project, we can have a look at the requirement but our analysis should cover them or it is incomplete and has missed a major point.

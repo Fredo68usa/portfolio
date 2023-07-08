@@ -42,7 +42,7 @@ We followed the Google-designed approach : Ask, Prepare, Process, Analyze, Share
 Note: the version I have for Tableau doesn't (Tableau Public Web) does not allow for nice Dashboard features. When I'll have a chance to get a better version I'll put a better Dashboard
 
 ## Presentation of the Making of this Analysis
-In this presentation, we describe the technical aspects of the project
+In this [presentation](https://github.com/Fredo68usa/portfolio/blob/main/The%20Making%20of%20Divvy%20Bike%20Data%20Analysis.pptx), we describe the technical aspects of the project
 
 ## R notebook 
 - on [Kaggle] (https://www.kaggle.com/code/fredolino68/capstone-project)

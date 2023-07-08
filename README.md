@@ -37,11 +37,18 @@ We followed the Google-designed approach : Ask, Prepare, Process, Analyze, Share
   
 ## Presentation of Findings
 [Presentation](https://github.com/Fredo68usa/portfolio/blob/511f4cc1f2289cec6ab30819e2f8c8321208ed63/DIVVY%20Chicago.pdf)
+[Tableau](https://public.tableau.com/views/DivvyStationGeoLocation/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link) 
+
+Note: the version I have for Tableau doesn't (Tableau Public Web) does not allow for nice Dashboard features. When I'll have a chance to get a better version I'll put a better Dashboard
 
 ## Presentation of the Making of this Analysis
 In this presentation, we describe the technical aspects of the project
 
-## R notebook
+## R notebook 
+- on [Kaggle] (https://www.kaggle.com/code/fredolino68/capstone-project)
+
+- on [GitHub] (https://github.com/Fredo68usa/portfolio/blob/main/DivvyNB.Rmd)
+
 
 # Capstone project #2 : London Housing
 ## Description 
@@ -62,8 +69,12 @@ We followed the Google-designed approach : Ask, Prepare, Process, Analyze, Share
 [Presentation](https://github.com/Fredo68usa/portfolio/blob/511f4cc1f2289cec6ab30819e2f8c8321208ed63/DIVVY%20Chicago.pdf)
 
 ## Presentation of the Making of this Analysis
-In this presentation, we describe the technical aspects of the project
+In this presentation, we describe the technical aspects of the project (in progress)
 
-## R notebook
+## R notebook 
+(in progress)
 
-
+# Dell Twitter Sentiments
+[Data set : ](https://www.kaggle.com/datasets/ankitkumar2635/sentiment-and-emotions-of-tweets)
+See the computation in the [Spreadsheet](https://github.com/Fredo68usa/portfolio/blob/main/DellEmojiTwitter.xlsx)
+# 

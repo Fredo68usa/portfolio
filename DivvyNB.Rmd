@@ -42,6 +42,9 @@ data2$member_casual <- as.factor(data2$member_casual)
 data2 <- na.omit(data2)
 data2$started_at <- as.POSIXct(data2$started_at, format="%Y-%m-%d %H:%M:%S", tz="America/Chicago")
 data2$ended_at <- as.POSIXct(data2$ended_at, format="%Y-%m-%d %H:%M:%S", tz="America/Chicago")
+
+data_all_stations$end_station_id <- as.factor(data_all_stations$end_station_id)
+data_top_stations$Stations.of.Interest <- as.factor(data_top_stations$Stations.of.Interest)
 ```
 
 # Overview with big Numbers

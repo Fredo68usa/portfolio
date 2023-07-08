@@ -1,4 +1,4 @@
-# list of Files in my portfolio GitHub folder
+# list of files in my portfolio GitHub folder
 
 - readme.md : this file with the list
 - README.md : Global presentation of the portfolio and the different projects

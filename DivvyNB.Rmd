@@ -1,0 +1,212 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+```{r}
+
+
+library(tidyverse)
+library(stringr)
+
+
+data2 <- read.csv("/Users/fredericpetit/Desktop/CT22/202204_divvy_tripdata_RAW.csv")
+data_all_stations <- read.csv("/Users/fredericpetit/Desktop/CT22/202204_divvy_All_Stations.csv")
+data_top_stations <- read.csv("/Users/fredericpetit/Desktop/CT22/202204_divvy_Top_Stations.csv")
+NbrRidesOriginal <- nrow(data2)
+
+data2[c('hours', 'minutes', 'seconds')] <- str_split_fixed(data2$Duration, ':', 3)
+data2$hours <- as.numeric(data2$hours)
+data2$minutes <- as.numeric(data2$minutes)
+data2$seconds <- as.numeric(data2$seconds)
+data2$duration <- data2$seconds + (data2$minutes*60) + (data2$hours*3600)
+
+data2$start_station_id <- as.factor(data2$start_station_id)
+data2$end_station_id <- as.factor(data2$end_station_id)
+data2$end_station_id <- as.factor(data2$end_station_id)
+data2$Same.Start.Finish <- as.factor(data2$Same.Start.Finish)
+data2$Start_finish <- as.factor(data2$Start_finish)
+data2$member_casual <- as.factor(data2$member_casual)
+data2 <- na.omit(data2)
+data2$started_at <- as.POSIXct(data2$started_at, format="%Y-%m-%d %H:%M:%S", tz="America/Chicago")
+data2$ended_at <- as.POSIXct(data2$ended_at, format="%Y-%m-%d %H:%M:%S", tz="America/Chicago")
+```
+
+# Overview with big Numbers
+## Nbr of usable rows
+```{r}
+nrow(data2)
+```
+
+## Nbr of Stations, departing & arriving 
+```{r}
+length(unique(data2$start_station_id))
+length(unique(data2$end_station_id))
+```
+# Management of the Stations
+## Stations by Volumes of Traffic
+### Departing Stations
+```{r}
+DepartingTripsPerStation <- data2 %>%
+group_by(data2$start_station_id) %>%
+    summarize ( 'Nbr of Departing Trips by Stations' = n(),
+                'Daily Average of Trips' = n()/30) %>%
+    arrange(desc(`Nbr of Departing Trips by Stations`))  
+Top40_departing <- DepartingTripsPerStation %>% inner_join(data_all_stations,by =c('data2$start_station_id' = 'end_station_id')) %>% print(n=40)
+summary(DepartingTripsPerStation$`Nbr of Departing Trips by Stations`)
+boxplot(DepartingTripsPerStation$`Nbr of Departing Trips by Stations`)
+summary(DepartingTripsPerStation$`Daily Average of Trips`)
+boxplot(DepartingTripsPerStation$`Daily Average of Trips`)
+```
+### Arriving Stations
+```{r}
+ArrivingTripsPerStation <- data2 %>%
+group_by(data2$end_station_id) %>%
+summarize ( 'Nbr of Arriving Trips by Stations' = n(),
+            'Daily Average of Trips' = n()/30) %>%
+arrange(desc(`Nbr of Arriving Trips by Stations`))  
+Top40_arriving <- ArrivingTripsPerStation %>% inner_join(data_all_stations,by =c('data2$end_station_id' = 'end_station_id')) %>% print(n=40)
+summary(ArrivingTripsPerStation$`Nbr of Arriving Trips by Stations`)
+boxplot(ArrivingTripsPerStation$`Nbr of Arriving Trips by Stations`)
+summary(ArrivingTripsPerStation$`Daily Average of Trips`)
+boxplot(ArrivingTripsPerStation$`Daily Average of Trips`)
+```
+### Top 40 Busiest Stations
+```{r}
+df2 <- DepartingTripsPerStation %>% inner_join( ArrivingTripsPerStation, by=c('data2$start_station_id'='data2$end_station_id'))
+df2$totalTrips <- df2$`Nbr of Departing Trips by Stations` + df2$`Nbr of Arriving Trips by Stations`
+df2 %>% arrange(desc(`totalTrips`))
+summary(df2$totalTrips)
+boxplot(df2$totalTrips)
+select(df2,"data2$start_station_id") %>% print(n=40)
+Top_Stations <- df2 %>% inner_join(data_all_stations,by =c('data2$start_station_id' = 'end_station_id')) %>% print(n=40)
+```
+
+### Stations with low or no traffic - Lowest Quartile
+```{r}
+df_lowest_traffic <- filter(df2, df2$totalTrips<=60)
+Lowest_Stations <- df_lowest_traffic %>% inner_join(data_all_stations,by =c('data2$start_station_id' = 'end_station_id')) %>% print(n=40)
+
+```
+## Stations by Deficit/Excess 
+
+```{r}
+df2$deficit_excess <- df2$`Nbr of Arriving Trips by Stations` - df2$`Nbr of Departing Trips by Stations`
+summary(df2$deficit_excess)
+boxplot(df2$deficit_excess)
+df2$deficitExcess.abs <- abs(df2$deficit_excess)
+list1defexc <- select(df2,"data2$start_station_id", "deficitExcess.abs")
+list1defexc %>% arrange(desc(list1defexc$deficitExcess.abs))
+```
+### Stations per Neighborhoods
+### Stations per Clusters
+### Analyse of Deficit/Excess per Clusters
+## Stations Rays 
+### Unique number of destinations per Stations
+
+
+```{r}
+RidesPerRoutesPerStation <- data2 %>%
+    group_by(data2$start_station_id,data2$Start_finish) %>%
+    summarize ( 'Nbr of Rides per Routes per Stations' = n()) %>%
+    arrange('Nbr of Rides per Routes per Stations')
+RidesPerRoutesPerStation %>% print(n=10)
+```
+
+```{r}
+UniqueDestinationPerStation <- RidesPerRoutesPerStation %>%
+    group_by(RidesPerRoutesPerStation$'data2$start_station_id') %>%
+    summarize ( UniqueDestinationPerStations = n()) %>%
+    arrange(desc(UniqueDestinationPerStations), .group_by = TRUE)
+UniqueDestinationPerStation %>% print(n=10)
+
+```
+
+### Analysis of 1 Station 
+```{r}
+df_176 <- data2[data2$start_station_id == 176 , ]
+RidesStation_176 <- df_176 %>%
+    group_by(df_176$end_station_id) %>%
+    summarize ( Rides = n(),
+                Distance = min(duration)) %>%
+    arrange(desc(Rides),.by_group = FALSE)
+RidesStation_176 %>% print(n=10)
+write.csv(RidesStation_176, "/Users/fredericpetit/RidesStation_176.csv", row.names=FALSE)
+
+```
+
+```{r}
+ggplot(data=RidesStation_176[RidesStation_176$Distance<=5000,], aes(x=Distance,y=Rides)) + geom_point()
+
+```
+
+To test whether riders have a preference for shorter trips - outliers excluded -
+
+# Rides and Riders
+## Dimensions of Analysis
+### Dim 1 : Member-Casual
+### Dim 2 : Most Popular Routes
+
+```{r}
+MostPopularRoutes <- data2 %>%
+    group_by(data2$start_station_id,data2$Start_finish, data2$end_station_id) %>%
+    summarize ( RidesPerRoutes = n()) %>%
+    arrange(desc(RidesPerRoutes), .group_by=TRUE)
+
+names(MostPopularRoutes) <- c('From','Route','To','Rides')
+MostPopularRoutes %>% print(n=10)
+
+MostPopularRoutes2 <- MostPopularRoutes %>% inner_join(data_all_stations,by=c( 'From' = 'end_station_id')) %>% print(n=40)
+MostPopularRoutes3 <- MostPopularRoutes2 %>% inner_join(data_all_stations,by=c( 'To' = 'end_station_id')) %>% print(n=40)
+MostPopularRoutes4 <- MostPopularRoutes3 %>% inner_join(data_top_stations,by=c( 'From' = 'Stations.of.Interest')) %>% print(n=40)
+MostPopularRoutes5 <- MostPopularRoutes4 %>% inner_join(data_top_stations,by=c( 'To' = 'Stations.of.Interest')) 
+
+names(MostPopularRoutes5) <- c("From","Route","To","Rides","station.From","lat.From","lng.From","station.To","lat.To","lng.To","Address.From","Neighborhood.From","Neighborhood.Type.From","Address.To","Neighborhood.To","Neighborhood.Type.To"  )
+MostPopularRoutes5%>% print(n=40)
+```
+
+
+```{r}
+
+MostPopularRoutesByNeighborhood <- MostPopularRoutes5 %>%
+    group_by(MostPopularRoutes5$'Neighborhood.From') %>%
+    summarize ( RidesFromNeighborhood = sum(Rides)) %>%
+    arrange(desc(RidesFromNeighborhood), .group_by=TRUE)
+MostPopularRoutesByNeighborhood %>% print(n=10)
+```
+
+```{r}
+
+MostPopularRoutesByNeighborhoodFromTo <- MostPopularRoutes5 %>%
+    group_by(MostPopularRoutes5$'Neighborhood.From',MostPopularRoutes5$'Neighborhood.To') %>%
+    summarize ( RidesPerNeighborhoodFromTo = sum(Rides)) %>%
+    arrange(desc(RidesPerNeighborhoodFromTo), .group_by=TRUE)
+
+MostPopularRoutesByNeighborhoodFromTo %>% print(n=10)
+```
+### Dim 3 : Loop vs. Commute
+
+```{r}
+
+LoopCommute <- data2 %>%
+    group_by(data2$Same.Start.Finish) %>%
+    summarize (  n() )
+LoopCommute %>% print(n=2)
+```
+
+### Dim 4 : Types of Riders
+### Dim 5 : Types of Rides - Tree -
+
+

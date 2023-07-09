@@ -7,6 +7,8 @@ Ask, Prepare, Process, Analyze, and Share are the 5 phases of the data analysis 
 
 [Content of my portfolio on GitHub](https://github.com/Fredo68usa/portfolio/blob/main/index.md)
 
+Contact : frederic.guy.petit@gmail.com 
+
 # Capstone project #1 : Divvy Bike
 
 ## Description 

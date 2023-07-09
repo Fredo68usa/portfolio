@@ -8,6 +8,7 @@
 - DIVVY Chicago.pdf : Business Presentation
 - The Making of Divvy.pdf : Technical comments
 - DivvyNB.Rmd : R Notebook
+- 202206-divvy-tripdata_clean.xlsx : Casual vs. Member
 
 ## Capstone Project #2 : London Housing
 

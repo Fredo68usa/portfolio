@@ -48,9 +48,9 @@ We followed the Google-designed approach : Ask, Prepare, Process, Analyze, Share
 In this [presentation](https://github.com/Fredo68usa/portfolio/blob/main/The%20Making%20of%20Divvy%20Bike%20Data%20Analysis.pptx), we describe the technical aspects of the project
 
 ## R notebook 
-- on [Kaggle] (https://www.kaggle.com/code/fredolino68/capstone-project)
+- on [Kaggle](https://www.kaggle.com/code/fredolino68/capstone-project)
 
-- on [GitHub] (https://github.com/Fredo68usa/portfolio/blob/main/DivvyNB.Rmd)
+- on [GitHub](https://github.com/Fredo68usa/portfolio/blob/main/DivvyNB.Rmd)
 
 
 # Capstone project #2 : London Housing

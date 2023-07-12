@@ -41,7 +41,7 @@ We followed the Google-designed approach : Ask, Prepare, Process, Analyze, Share
 [Presentation](https://github.com/Fredo68usa/portfolio/blob/511f4cc1f2289cec6ab30819e2f8c8321208ed63/DIVVY%20Chicago.pdf)
 [Tableau](https://public.tableau.com/views/DivvyStationGeoLocation/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link) 
 
-- Note 1 : Mz UI of choice is Kibana, not Tableau I find complicated and not logical, as opposed to Kibana 
+- Note 1 : My Analytics UI of choice is Kibana, not Tableau I find complicated and not logical, as opposed to Kibana 
 - Note 2 : the version I have for Tableau doesn't (Tableau Public Web) does not allow for nice Dashboard features. When I'll have a chance to get a better version I'll put a better Dashboard
 
 ## Presentation of the Making of this Analysis

@@ -6,6 +6,7 @@ Ask, Prepare, Process, Analyze, and Share are the 5 phases of the data analysis 
 [Bio on LinkedIn](https://www.linkedin.com/in/fredericpetitusa/)
 
 My certifications :
+[Google Data Analytics](https://github.com/Fredo68usa/portfolio/blob/main/Coursera N3JN3HVHL8LL.pdf)
 [Google Analytics](https://github.com/Fredo68usa/portfolio/blob/main/Course_Certificate.pdf)
 
 [Content of my portfolio on GitHub](https://github.com/Fredo68usa/portfolio/blob/main/index.md)

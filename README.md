@@ -22,7 +22,7 @@ The Capstone project is the hands-on project to be completed at the end of the G
 
 You can bring this project as far as you want to.
 
-In this case, we have used some the tools presented in the course,<b> Google Sheets and R </b>, We have left aside SQL and Tableau. We have also limited the data to 1 month (April 2020). It's always better to start small to build the process and if satisfying to exapnd it to larger amount of data. We think we were able to come up with a pertinent approach. To expand it to larger volumes requires a different set of tools capable of hosting laerge volume. We think  the best tool is either ELK or SQL + Tableau on GCP BigQuery or R on Spark.
+In this case, we have used some the tools presented in the course,<b> Google Sheets and R </b>, We have left aside SQL and Tableau. We have also limited the data to 1 month (April 2020). It's always better to start small to build the process and if satisfying to exapnd it to larger amount of data. We think we were able to come up with a pertinent approach. To expand it to larger volumes requires a different set of tools capable of hosting large volume. We think  the best tool is either ELK or SQL + Tableau on GCP BigQuery or R on Spark.
 
 We will present at a later stage such implementations. Our goal is to ultimately offer different types of implementation for Data Analysis projects by our Open Source project turned into our Context22 start-up.
 ≈
@@ -37,7 +37,7 @@ Despite the project providing an high level requirement document, we prefer the 
 
 We followed the Google-designed approach : Ask, Prepare, Process, Analyze, Share.
 - <b>Ask</b> : We asked ourself all along as we were discovering. In particular it showed us what additional data would be needed.
-- <b>Prepare</b> : The data had a lot of redundancy and it's why the data were so large, making them more difficult to manipulate. We fixed this by implementing a data model. We used Speredsheets, Tableau and R but also Kibana which is easier and more logical to use. Kibana is still our tool of choice, followed by R.
+- <b>Prepare</b> : The data had a lot of redundancy and it's why the data were so large, making them more difficult to manipulate. We fixed this by implementing a data model. We used Speredsheets, Tableau and R but also Kibana which is easier and more logical to use than Tableau. Kibana is still our tool of choice, followed by R.
 - <b>Process</b> : The data were pretty clean already and didn't have much cleaning work to do
 - <b>Analyze</b> : 
 - <b>Share</b> : We split the presentation in 2: The Findings and Recommendations vs. The Making of the Analysis.

@@ -37,7 +37,7 @@ Despite the project providing an high level requirement document, we prefer the 
 
 We followed the Google-designed approach : Ask, Prepare, Process, Analyze, Share.
 - <b>Ask</b> : We asked ourself all along as we were discovering. In particular it showed us what additional data would be needed.
-- <b>Prepare</b> : The data had a lot of redundancy and it's why the data were so large, making them more difficult to manipulate. We fixed this by implementing a data model. We used Speredsheets, Tableau and R but Kibana as well that was easier to use. Kibana is still our tool of choice, followed by R.
+- <b>Prepare</b> : The data had a lot of redundancy and it's why the data were so large, making them more difficult to manipulate. We fixed this by implementing a data model. We used Speredsheets, Tableau and R but also Kibana which is easier and more logical to use. Kibana is still our tool of choice, followed by R.
 - <b>Process</b> : The data were pretty clean already and didn't have much cleaning work to do
 - <b>Analyze</b> : 
 - <b>Share</b> : We split the presentation in 2: The Findings and Recommendations vs. The Making of the Analysis.

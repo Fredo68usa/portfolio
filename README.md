@@ -1,9 +1,10 @@
 # Frederic Petit's Data Analysis Portfolio
-Google Data Analysis Professional Certificate
-
-Ask, Prepare, Process, Analyze, and Share are the 5 phases of the data analysis process
 
 [Bio on LinkedIn](https://www.linkedin.com/in/fredericpetitusa/)
+
+Contact : frederic.guy.petit@gmail.com 
+
+## Google Data Analysis Professional Certificate
 
 My recent certifications in Analytics : <br>
 [Google Data Analytics](https://github.com/Fredo68usa/portfolio/blob/main/Coursera_N3JN3HVHL8LL.pdf) <br>
@@ -11,7 +12,8 @@ My recent certifications in Analytics : <br>
 
 [Content of my portfolio on GitHub](https://github.com/Fredo68usa/portfolio/blob/main/index.md)
 
-Contact : frederic.guy.petit@gmail.com 
+
+<b>Ask, Prepare, Process, Analyze, and Share are the 5 phases of the data analysis process</b>
 
 # Capstone project #1 : Divvy Bike
 
